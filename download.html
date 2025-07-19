@@ -37,40 +37,40 @@
             background: var(--card-bg);
             border-radius: 18px;
             box-shadow: 0 8px 32px rgba(44,93,182,0.12);
-            padding: 2rem 1.5rem;
-            min-width: 280px;
-            max-width: 350px;
+            padding: 4rem 3rem;
+            min-width: 560px;
+            max-width: 700px;
             text-align: center;
             backdrop-filter: blur(var(--glass-blur));
             border: 1.5px solid rgba(255,255,255,0.18);
         }
         h1 {
-            font-size: 1.45rem;
+            font-size: 2.9rem;
             font-weight: 700;
             color: var(--primary);
-            margin-bottom: 1.1rem;
+            margin-bottom: 2.2rem;
             letter-spacing: 0.5px;
         }
         p {
-            font-size: 1.02rem;
+            font-size: 2.04rem;
             color: var(--muted);
-            margin-bottom: 1.7rem;
+            margin-bottom: 3.4rem;
         }
         a.download-btn {
             display: inline-block;
-            padding: 0.8rem 1.7rem;
-            font-size: 1.08rem;
+            padding: 1.6rem 3.4rem;
+            font-size: 2.16rem;
             font-weight: 700;
             background: linear-gradient(90deg, var(--primary), var(--primary-dark));
             color: #fff;
-            border-radius: 10px;
+            border-radius: 20px;
             text-decoration: none;
-            box-shadow: 0 4px 16px rgba(108,99,255,0.10);
+            box-shadow: 0 8px 32px rgba(108,99,255,0.10);
             transition: background 0.3s, transform 0.2s;
         }
         a.download-btn:hover {
             background: linear-gradient(90deg, var(--primary-dark), var(--primary));
-            transform: translateY(-2px) scale(1.03);
+            transform: translateY(-4px) scale(1.06);
         }
         /* Dark mode */
         body.dark {
@@ -99,6 +99,27 @@
             background: linear-gradient(90deg, var(--primary), var(--primary-dark));
             color: #232733;
         }
+        /* Responsive for mobile */
+        @media (max-width: 700px) {
+            .container {
+                padding: 2.2rem 0.7rem;
+                min-width: 0;
+                max-width: 98vw;
+            }
+            h1 {
+                font-size: 2.1rem;
+                margin-bottom: 1.2rem;
+            }
+            p {
+                font-size: 1.3rem;
+                margin-bottom: 2rem;
+            }
+            a.download-btn {
+                font-size: 1.3rem;
+                padding: 1.1rem 1.7rem;
+                border-radius: 14px;
+            }
+        }
     </style>
 </head>
 <body class="dark">
@@ -107,7 +128,7 @@
         <p>Android-App für einen Verbesserten Vertretungsplan<br>👻</p>
         <a href="VertretungsplanApp.apk" download class="download-btn">⬇️ APK Download</a>
     </div>
-    <button id="darkToggle" style="position:fixed;right:18px;top:18px;font-size:1.1rem;padding:0.3rem 1.1rem;border-radius:8px;background:rgba(108,99,255,0.12);color:var(--primary);border:none;box-shadow:0 2px 8px rgba(108,99,255,0.08);cursor:pointer;">
+    <button id="darkToggle" style="position:fixed;right:18px;top:18px;font-size:2.2rem;padding:0.6rem 2.2rem;border-radius:16px;background:rgba(108,99,255,0.12);color:var(--primary);border:none;box-shadow:0 4px 16px rgba(108,99,255,0.08);cursor:pointer;">
         🌙
     </button>
     <script>
