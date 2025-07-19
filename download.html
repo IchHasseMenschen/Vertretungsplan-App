@@ -101,7 +101,7 @@
         }
     </style>
 </head>
-<body>
+<body class="dark">
     <div class="container">
         <h1>Vertretungsplan App</h1>
         <p>Android-App für einen Verbesserten Vertretungsplan<br>👻</p>
@@ -124,7 +124,8 @@
         }
     }
     darkToggle.onclick = () => setDarkMode(!document.body.classList.contains('dark'));
-    if (localStorage.getItem('darkMode') === '1') setDarkMode(true);
+    // Default to dark mode unless localStorage says otherwise
+    if (localStorage.getItem('darkMode') !== '0') setDarkMode(true);
     </script>
 </body>
 </html>
