@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Vertretungsplan App Download</title>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6c63ff;
+            --primary-dark: #5548c8;
+            --bg: #f5f7fa;
+            --card-bg: rgba(255,255,255,0.85);
+            --glass-blur: 10px;
+            --text: #232946;
+            --muted: #8a8fa3;
+        }
+        body {
+            font-family: 'Nunito', 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(120deg, #f5f7fa, #e0e6ed, #dbe6fd, #f5f7fa);
+            background-size: 400% 400%;
+            animation: gradientFadeBG 18s ease-in-out infinite;
+            color: var(--text);
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        @keyframes gradientFadeBG {
+            0% {background-position: 0% 50%;}
+            25% {background-position: 50% 100%;}
+            50% {background-position: 100% 50%;}
+            75% {background-position: 50% 0%;}
+            100% {background-position: 0% 50%;}
+        }
+        .container {
+            background: var(--card-bg);
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(44,93,182,0.12);
+            padding: 2rem 1.5rem;
+            min-width: 280px;
+            max-width: 350px;
+            text-align: center;
+            backdrop-filter: blur(var(--glass-blur));
+            border: 1.5px solid rgba(255,255,255,0.18);
+        }
+        h1 {
+            font-size: 1.45rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1.1rem;
+            letter-spacing: 0.5px;
+        }
+        p {
+            font-size: 1.02rem;
+            color: var(--muted);
+            margin-bottom: 1.7rem;
+        }
+        a.download-btn {
+            display: inline-block;
+            padding: 0.8rem 1.7rem;
+            font-size: 1.08rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+            color: #fff;
+            border-radius: 10px;
+            text-decoration: none;
+            box-shadow: 0 4px 16px rgba(108,99,255,0.10);
+            transition: background 0.3s, transform 0.2s;
+        }
+        a.download-btn:hover {
+            background: linear-gradient(90deg, var(--primary-dark), var(--primary));
+            transform: translateY(-2px) scale(1.03);
+        }
+        /* Dark mode */
+        body.dark {
+            --primary: #7daaff;
+            --primary-dark: #b3cfff;
+            --bg: #181c23;
+            --card-bg: #232733;
+            --text: #e7eaf3;
+            --muted: #b3b9c9;
+            background: linear-gradient(120deg, #181c23, #232733, #232e4a, #181c23);
+            background-size: 400% 400%;
+            animation: gradientFadeBG 18s ease-in-out infinite;
+        }
+        body.dark .container {
+            background: var(--card-bg);
+            color: var(--text);
+            border: 1.5px solid rgba(255,255,255,0.09);
+        }
+        body.dark h1 {
+            color: var(--primary);
+        }
+        body.dark p {
+            color: var(--muted);
+        }
+        body.dark a.download-btn {
+            background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+            color: #232733;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Vertretungsplan App</h1>
+        <p>Android-App für einen Verbesserten Vertretungsplan<br>👻</p>
+        <a href="VertretungsplanApp.apk" download class="download-btn">⬇️ APK Download</a>
+    </div>
+    <button id="darkToggle" style="position:fixed;right:18px;top:18px;font-size:1.1rem;padding:0.3rem 1.1rem;border-radius:8px;background:rgba(108,99,255,0.12);color:var(--primary);border:none;box-shadow:0 2px 8px rgba(108,99,255,0.08);cursor:pointer;">
+        🌙
+    </button>
+    <script>
+    // Dark mode toggle logic
+    const darkToggle = document.getElementById('darkToggle');
+    function setDarkMode(on) {
+        darkToggle.textContent = on ? '☀️' : '🌙';
+        if (on) {
+            document.body.classList.add('dark');
+            localStorage.setItem('darkMode', '1');
+        } else {
+            document.body.classList.remove('dark');
+            localStorage.setItem('darkMode', '0');
+        }
+    }
+    darkToggle.onclick = () => setDarkMode(!document.body.classList.contains('dark'));
+    if (localStorage.getItem('darkMode') === '1') setDarkMode(true);
+    </script>
+</body>
+</html>
